@@ -1,5 +1,5 @@
 streamlit
 pandas
 plotly
-pyautogui as pag
+pyautogui
 time

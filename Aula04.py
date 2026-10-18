@@ -12,7 +12,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import time
-import pyautogui as pag
+# import pyautogui as pag
 from datetime import date # Usado para validar e formatar datas (acrescentei por conta própria)
 # import locale --> Isso é para forçar o interpretador do Python a adotar as regras numéricas do Brasil MAS NÃO DEU CERTO !
 # locale.setlocale(locale.LC_ALL, "pt_BR.utf8") --> Isso garante que qualquer função localizada use ponto no milhar e vírgula no decimal MAS NÃO DEU CERTO !
@@ -54,11 +54,11 @@ if botao:
         nova_venda = [data, vendedor, produto, qtde, valor, (qtde * valor)] # "Guardando" os dados digitados na variável nova_venda
         tabela.loc[len(tabela)] = nova_venda # Adiciona a nova venda na próxima linha disponível da tabela. O len(tabela) retorna o número de linhas existentes, que é o índice da posição onde a nova linha deve entrar.
         tabela.to_csv("Vendas.csv", index=False) # Salva toda a tabela atualizada de volta no arquivo Vendas.csv. O index=False evita que o Pandas adicione uma coluna extra de numeração no início de cada linha.
-        time.sleep(1.5)
-        pag.click(x=385, y=129)
-        time.sleep(2.5)        
-        pag.scroll(10000)
-        time.sleep(2.5)
+        # time.sleep(1.5)
+        # pag.click(x=385, y=129)
+        # time.sleep(2.5)        
+        # pag.scroll(10000)
+        # time.sleep(2.5)
         st.success("Venda cadastrada com sucesso!") # --> RETIRADO do código original do professor, para encaixar minhas demandas com o novo abaixo (MAS VOLTOU, rsrsrs):
         st.toast("Venda cadastrada com sucesso! 🎉")
         time.sleep(3) # PAUSA para visualização da mensagem de sucesso !        
@@ -87,14 +87,14 @@ tabela["mes_nome"] = pd.to_datetime(tabela["data"]).dt.month_name()
 grafico3 = px.bar(tabela, x='mes_nome', y='total_venda', color='vendedor', title="Evolução de Vendas por Mês")
 st.plotly_chart(grafico3)
 
-if n_a == 0:
-    time.sleep(1)
-    pag.click(x=225, y=695)
-    time.sleep(0.5)
-    pag.scroll(-100)
-    time.sleep(0.5)
-    pag.click(x=1359, y=714)
-    time.sleep(0.5)
-    pag.click(x=603, y=325)
-    time.sleep(0.5)
-    pag.click(x=535, y=425)
+# if n_a == 0:
+    # time.sleep(1)
+    # pag.click(x=225, y=695)
+    # time.sleep(0.5)
+    # pag.scroll(-100)
+    # time.sleep(0.5)
+    # pag.click(x=1359, y=714)
+    # time.sleep(0.5)
+    # pag.click(x=603, y=325)
+    # time.sleep(0.5)
+    #pag.click(x=535, y=425)
