@@ -11,7 +11,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import time
+# import time
 # import pyautogui as pag
 from datetime import date # Usado para validar e formatar datas (acrescentei por conta própria)
 # import locale --> Isso é para forçar o interpretador do Python a adotar as regras numéricas do Brasil MAS NÃO DEU CERTO !
@@ -61,7 +61,7 @@ if botao:
         # time.sleep(2.5)
         st.success("Venda cadastrada com sucesso!") # --> RETIRADO do código original do professor, para encaixar minhas demandas com o novo abaixo (MAS VOLTOU, rsrsrs):
         st.toast("Venda cadastrada com sucesso! 🎉")
-        time.sleep(3) # PAUSA para visualização da mensagem de sucesso !        
+        # time.sleep(3) # PAUSA para visualização da mensagem de sucesso !        
         # st.rerun() # Força o Streamlit a reiniciar o script. Ao reiniciar, todos os inputs voltam ao padrão vazio/zerado!
         st.components.v1.html("<script>parent.window.location.reload();</script>", height=0)        
 
